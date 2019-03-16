@@ -1,12 +1,12 @@
 #include<iostream>
 using namespace std;
 
-void merge(int arr[],int start1,int start2,int end){
-	int k = start1;
-	int m = start2-1;
-	int n = end;
-	int index=0;
-	int temp[10];
+void merge(long long int arr[],long long int start1,long long int start2,long long int end){
+	long long int k = start1;
+	long long int m = start2-1;
+	long long int n = end;
+	long long int index=0;
+	long long int temp[100];
 	while(start1<=m && start2<=n){
 		if(arr[start1]<arr[start2]){
 			temp[index++]=arr[start1++];
@@ -26,7 +26,7 @@ void merge(int arr[],int start1,int start2,int end){
 	return;
 }
 
-void mergeSort(int arr[],int start,int end){
+void mergeSort(long long int arr[],long long int start,long long int end){
 	if(start>=end){
 		return;
 	}
@@ -38,9 +38,14 @@ void mergeSort(int arr[],int start,int end){
 }
 
 int main(){
-	int arr[10]={5,4,7,1,3};
-	mergeSort(arr,0,4);
-	for(int i=0;i<5;i++){
+	long long int n;
+	long long int arr[1000000];
+	cin>>n;
+	for(int i=0;i<n;i++){
+		cin>>arr[i];
+	}
+	mergeSort(arr,0,n-1);
+	for(int i=0;i<n;i++){
 		cout<<arr[i]<<" ";
 	}
 }
