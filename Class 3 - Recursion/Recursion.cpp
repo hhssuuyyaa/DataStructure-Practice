@@ -232,8 +232,12 @@ void permutate(int arr[],int n,int i){
     return;
 }
 int main(){
-int arr[10] = {1,1,2};
-permutate(arr,3,0);
+int arr[10] = {1,4,2,6};
+selectionSort(arr,3,0);
+for(int i=0;i<=3;i++){
+	cout<<arr[i]<<" ";
+}
+//permutate(arr,3,0);
 //cout<<binarySearch(arr,0,2,3)<<endl;;
 //tow(5,'A','C','B');
 }
