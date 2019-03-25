@@ -26,11 +26,11 @@ int main(){
     x++;
     cout<<x<<endl;
 
-    /*
-/*
+    */
+
 const int x = 10;
 //int &y = x;
 x = 15;
 cout<<x++<<endl;
-*/
+
 }

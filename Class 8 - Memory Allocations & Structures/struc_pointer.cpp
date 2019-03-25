@@ -62,9 +62,4 @@ int main() {
     student s("XYZ",15);
     s.location = &adr;
     printStudent(s);
-
-
-
 }
-
-

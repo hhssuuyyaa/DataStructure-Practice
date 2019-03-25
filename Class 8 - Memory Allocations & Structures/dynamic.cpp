@@ -4,18 +4,15 @@ int * f(){
     //int * ptr = new int;
     int x = 10;
     int * ptr = &x;;
-    //*ptr = 12;
+    *ptr = 12;
     return ptr;
 }
 
-int * f2(int n){
-    int * ptr = new int[n];
-    return ptr;
-}
 int main(){
     int * x = f();
     cout<<*x<<endl;
     delete x;
+    return 0;
 /*
 int * ptr = new int;
 *ptr = 10;

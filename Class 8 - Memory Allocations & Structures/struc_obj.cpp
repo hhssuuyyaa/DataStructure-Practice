@@ -39,7 +39,7 @@ int main() {
     cout<<s.name<<endl;
     cout<<s2.age<<endl;
 
-    student s1[10];
+    student s1[3];
     s.age = 10;
     s.gender = 'F';
     cin.getline(s.name,100);
