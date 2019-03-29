@@ -3,7 +3,7 @@
 using namespace std;
 int count = 0;
 void check(int val, ll d, ll a, ll b){
-    
+
 if(val == d+a+b ||val==d-(a+b)|| val == (d+(a-b))|| val == (d-(a-b))|| val == (d + (b-a))|| val == (d - (b-a)) || val == d+a ||  val ==d+b || val == a+a || val == b+b || val == (d-a) || val == (d-b)){
     count++;
     }
@@ -22,4 +22,3 @@ int main() {
     }
     cout<<count;
 }
-

@@ -19,7 +19,7 @@ void solve(string s1, string s2, int i, int j){
     }
    else if(s1[i]<s2[j] && s1[i]!='\0'){
         output += s1[i];
-        i++; 
+        i++;
     }
     else {
         output += s2[j];
@@ -37,4 +37,3 @@ int main() {
        cout<<endl;
    }
 }
-
