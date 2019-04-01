@@ -9,7 +9,7 @@ struct node{
 struct node1{
     int data;
     node* next;
-    bool counter=true;;
+    bool visited;
 };
 
 void createll(node* &head){
@@ -167,21 +167,21 @@ pair<node*,node*> reversell1(node* head){
         return p;
     }
     pair<node*,node*> p = reversell1(head->next);
-    p.second->head;
+    p.second->next = head;
     p.second = head;
     head->next = NULL;
     return p;
 }
 
-bool checkCircular(node1* head){
+bool isCircular(node1* head){
     while(head){
-        if(head->counter==true){
-            return 1;
+        if(head->visited==true){
+            return true;
         }
-        head->counter=1;
+        head->visited=true;
         head=head->next;
     }
-    return 0;
+    return false;
 }
 
 int main(){
