@@ -4,7 +4,6 @@ using namespace std;
 template<typename T>
 struct stack{
     private:
-    //vector<int>v;
     vector<T>v;
 public:
     int size(){
@@ -31,20 +30,31 @@ public:
         return v[v.size()-1];
     }
 };
-int main(){
-stack<char> s;
-stack<int> s1;
-cout<<s.v[0]<<endl;
-cout<<s.size()<<endl;
-s.push('A');
-s.push('B');
-s.push('C');
-cout<<s.top()<<endl;
-s.pop();
-cout<<s.top()<<endl;
+//REVERSE OF STACK USING JUST 1 EXTRA STACK
+void recursive(stack<int>&s,stack<int>&s1){
+    if(s.isEmpty()){
+        return;
+    }
+    int data = s.top();
+    s.pop();
+    recursive(s,s1);
+    s1.push(data);
+    return;
 }
-
-
-
-
-
+int main(){
+    stack<int>s;
+    stack<int>s1;
+    s.push(3);
+    s.push(2);
+    s.push(1);
+    recursive(s,s1);
+    while(!s1.isEmpty()){
+        int data = s1.top();
+        s1.pop();
+        s.push(data);
+    }
+    while(!s.isEmpty()){
+        cout<<s.top()<<endl;
+        s.pop();
+    }
+}

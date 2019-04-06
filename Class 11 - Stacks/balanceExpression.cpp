@@ -1,5 +1,4 @@
 #include<iostream>
-#include<vector>
 #include<stack>
 using namespace std;
 /*
@@ -36,7 +35,7 @@ public:
 */
 int main(){
 stack<char>s;
-char arr[100] = "{()}]";
+char arr[100] = "[a + {b + (c + d) + e} + f]";
 int i=0;
 while(arr[i]!='\0'){
     if(arr[i]=='(' || arr[i]=='{' || arr[i]=='['){
