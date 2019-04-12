@@ -40,16 +40,16 @@ void buildList(node*&head, int size){
     }
 }
 
-node* reverse(node*head){
-    if(head->next == NULL|| head == NULL){
+node* reverse(node*head,node*&tail){
+    if(head->next == NULL){
+        tail = head;
         return head;
     }
-    node* smallHead = reverse(head->next);
-    // reverse(smallHead);
-    node *c  = head;
-    c->next->next = c;
-    c->next = NULL;
-    return smallHead;
+    node* newHead = reverse(head->next,tail);
+    tail->next=head;
+    tail = head;
+    tail->next=NULL;
+    return newHead;
 
 }
 void copy(node*head, node*&newH){
@@ -75,6 +75,6 @@ int main() {
    buildList(head,size);
    node *old = NULL;
    copy(head,old);
-   old = reverse(old);
+   old = reverse(head,old);
    check(head,old)?cout<<"true":cout<<"false";
 }
