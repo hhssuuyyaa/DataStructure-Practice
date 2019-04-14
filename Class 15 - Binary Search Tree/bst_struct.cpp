@@ -203,9 +203,36 @@ bool isBST(node * root){
     bool right  = isBST(root->right);
     return right;
 }
+//wrong code idiot neeche sir ki approach
+/*
+node* BSTfromArray(int * arr,int start,int end){
+    if(start>=end){
+        return NULL;
+    }
+    int mid = (start+end)/2;
+    node* root = new node(mid);
+    node* left = BSTfromArray(arr,start,mid);
+    node* right = BSTfromArray(arr,mid+1,end);
+    root->left = left;
+    root->right = right;
+    return root;
+}
+*/
+
+//Sir ka code
+node* bstFromSortedArray(int * arr,int start,int end){
+    if(start>end){
+        return NULL;
+    }
+    int mid = (start+end)/2;
+    node* root = new node(arr[mid]);
+    root->left = bstFromSortedArray(arr,start,mid-1);
+    root->right = bstFromSortedArray(arr,mid+1,end);
+    return root;
+}
 // 8 10 3 1 6 -1 14 -1 -1 4 7 13 -1 -1 -1 -1 -1 -1 -1
 int main(){
-node * root = NULL;
+/*node * root = NULL;
 addElement(root,8);
 addElement(root,10);
 addElement(root,3);
@@ -224,6 +251,12 @@ cout<<endl;
 levelOrderPrint(root);
 root = sortedLL(root);
 printLL(root);
+*/
+int arr[10] = {1,2,3,4,5,6,7};
+node* root = NULL;
+
+root = bstFromSortedArray(arr,0,6);
+levelOrderPrint(root);
 }
 
 
