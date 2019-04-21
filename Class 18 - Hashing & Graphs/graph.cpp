@@ -18,9 +18,9 @@ public:
     }
     void print(){
         for(int i=0;i<v;i++){
-            list<int>:: iterator it;
+            //list<int>:: iterator it;
             cout<<i<<"  --> ";
-            for(it = l[i].begin();it!=l[i].end();it++){
+            for(auto it = l[i].begin();it!=l[i].end();it++){        //we can use auto it will automatically assign datatype, but we cant write like this auto c, kuch expression hona chahie
                 cout<<*it<<" , ";
             }
             cout<<endl;
@@ -37,14 +37,3 @@ g.addEdge(3,4);
 g.addEdge(4,2);
 g.print();
 }
-
-
-
-
-
-
-
-
-
-
-
